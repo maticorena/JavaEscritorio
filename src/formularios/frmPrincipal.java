@@ -25,6 +25,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dpnEscritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnuArchivo = new javax.swing.JMenu();
         menuArchivoClientes = new javax.swing.JMenuItem();
@@ -45,6 +46,19 @@ public class frmPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Facturación");
 
+        dpnEscritorio.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout dpnEscritorioLayout = new javax.swing.GroupLayout(dpnEscritorio);
+        dpnEscritorio.setLayout(dpnEscritorioLayout);
+        dpnEscritorioLayout.setHorizontalGroup(
+            dpnEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 536, Short.MAX_VALUE)
+        );
+        dpnEscritorioLayout.setVerticalGroup(
+            dpnEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 397, Short.MAX_VALUE)
+        );
+
         mnuArchivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/folder.png"))); // NOI18N
         mnuArchivo.setText("Archivo");
 
@@ -58,6 +72,11 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         menuArchivoUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/group.png"))); // NOI18N
         menuArchivoUsuarios.setText("Usuarios");
+        menuArchivoUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuArchivoUsuariosActionPerformed(evt);
+            }
+        });
         mnuArchivo.add(menuArchivoUsuarios);
         mnuArchivo.add(jSeparator1);
 
@@ -75,8 +94,14 @@ public class frmPrincipal extends javax.swing.JFrame {
         mnuArchivo.add(menuArchivoCambioUsuario);
         mnuArchivo.add(jSeparator2);
 
+        menuArchivoSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         menuArchivoSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/door_out.png"))); // NOI18N
         menuArchivoSalir.setText("Salir");
+        menuArchivoSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuArchivoSalirActionPerformed(evt);
+            }
+        });
         mnuArchivo.add(menuArchivoSalir);
 
         jMenuBar1.add(mnuArchivo);
@@ -113,11 +138,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 536, Short.MAX_VALUE)
+            .addComponent(dpnEscritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 397, Short.MAX_VALUE)
+            .addComponent(dpnEscritorio)
         );
 
         pack();
@@ -126,6 +151,16 @@ public class frmPrincipal extends javax.swing.JFrame {
     private void menuArchivoCambioClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuArchivoCambioClaveActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_menuArchivoCambioClaveActionPerformed
+
+    private void menuArchivoUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuArchivoUsuariosActionPerformed
+        frmUsuarios misUsuarios = new frmUsuarios();
+        dpnEscritorio.add(misUsuarios);
+        misUsuarios.show();
+    }//GEN-LAST:event_menuArchivoUsuariosActionPerformed
+
+    private void menuArchivoSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuArchivoSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_menuArchivoSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,6 +198,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane dpnEscritorio;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
